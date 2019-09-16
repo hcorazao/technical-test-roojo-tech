@@ -1,0 +1,22 @@
+.container {
+  float: left;
+  
+  .form-container {
+    float: left;
+  }
+  .reservations {
+    float: left;
+    
+    .reservation {
+      float: left;
+      padding: 1%;
+      width: 98%;
+      height: 100%;
+      border: 1px solid grey;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+  }
+  
+}

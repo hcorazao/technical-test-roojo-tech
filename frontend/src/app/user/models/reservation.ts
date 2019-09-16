@@ -1,8 +1,9 @@
-export class Flight {
-  id:string;
-  numberFlight:string;
+export class Reservation {
+  id: string;
+  userDocumentId: string;
+  reservationDate: string;
   price: number;
-  company:string;
+  numberFlight: string;
   origin:{
     id: string;
     city: string;

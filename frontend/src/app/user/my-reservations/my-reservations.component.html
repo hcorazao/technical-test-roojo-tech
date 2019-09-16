@@ -4,6 +4,23 @@
         (ngSubmit)="searchFlights($event)" 
         novalidate>
     <input type="text" formControlName="userDocument">
-    <button mat-raised-button (click)="searchFlights($event)">Comprar</button>
+    <button mat-raised-button (click)="searchTickets($event)">Buscar</button>
+  </div>
+  <div class="reservations" *ngIf="!!reservations">
+    <h1>Reservations</h1>
+    <div class="reservation" *ngFor="let reservation of reservations">
+      <div class="section">
+        <span class="title">Precio: </span>{{reservation.price}}$
+      </div>
+      <div class="section">
+        <span class="title">Origen: </span>{{reservation.origin.city}}/{{reservation.origin.country}}
+        <span class="title">Fecha: </span>{{reservation.origin.date}}
+      </div>
+      <div class="section">
+        <span class="title">Llegada: </span>{{reservation.destination.city}}/{{reservation.destination.country}}
+        <span class="title">Fecha: </span>{{reservation.destination.date}}
+      </div>
+      <button mat-raised-button (click)="selectFlight(flight)">Comprar</button>
+    </div>
   </div>
 </div>

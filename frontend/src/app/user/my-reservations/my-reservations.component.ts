@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { UserService } from '../user.service';
-import { Flight } from '../models/flight';
+import { Reservation } from '../models/reservation';
 
 @Component({
   selector: 'app-my-reservations',
@@ -9,7 +9,7 @@ import { Flight } from '../models/flight';
   styleUrls: ['./my-reservations.component.scss']
 })
 export class MyReservationsComponent implements OnInit {
-  flights: Flight[];
+  reservations: Reservation[];
   reservationsForm: FormGroup;
 
   constructor(
@@ -38,9 +38,21 @@ export class MyReservationsComponent implements OnInit {
     this.reservationsForm = this.formBuilder.group(controls);
   }
 
-  searchFlights(event) {
+  searchTickets(event) {
   	event.preventDefault();
-  	console.log("flight", this.reservationsForm.value.userDocument);
+  	const userDocument = this.reservationsForm.value.userDocument;
+    if (!!userDocument) {
+      this.userService.getTickets(userDocument).subscribe((response) => {
+        if (!!response) {
+          console.log("response", response);
+          this.reservations = response.reservations;
+        }
+      }, (error=>{
+        console.log("error", error);
+      }));
+    } else {
+      alert("Por favor, introduce un documento");
+    }    	
   }
 
 }
