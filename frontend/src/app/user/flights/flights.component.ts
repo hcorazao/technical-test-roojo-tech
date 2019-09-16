@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
+import { Flight } from '../models/flight';
 
 @Component({
   selector: 'app-flights',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flights.component.scss']
 })
 export class FlightsComponent implements OnInit {
+  flights: Flight[];
 
-  constructor() { }
+  constructor(
+    public userService: UserService
+  ) { }
 
   ngOnInit() {
+    this.loadFlights();
+  }
+
+  loadFlights() {
+    this.userService.getFlights().subscribe((response) => {
+      console.log("response", response);
+      if (!!response) {
+        this.flights = response.flights;
+      }
+    }, (error=>{
+      console.log("error", error);
+    }));
   }
 
 }

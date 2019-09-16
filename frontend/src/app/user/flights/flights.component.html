@@ -1,3 +1,12 @@
-<p>
-  flights works!
-</p>
+<div class="container">
+  <h1>Todos los vuelos</h1>
+  <div class="flight" *ngFor="let flight of flights">
+    <div class="section">
+      <span>Precio: </span>{{flight.price}}$
+    </div>
+    <div class="section">
+      <span>Origen: </span>{{flight.origin.city}}/{{flight.origin.country}}
+      <span>Fecha de salida: </span>{{flight.origin.date}}
+    </div>
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { MyReservationsComponent } from './my-reservations/my-reservations.compo
 import { FlightsComponent } from './flights/flights.component';
 import { FlightDetailComponent } from './flight-detail/flight-detail.component';
 
+import { UserService } from './user.service';
 @NgModule({
   declarations: [
   MyReservationsComponent,
@@ -27,7 +28,7 @@ import { FlightDetailComponent } from './flight-detail/flight-detail.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  // providers: [UploadService]
+  providers: [UserService]
 })
 export class UserModule { 
 }
