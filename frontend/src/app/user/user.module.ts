@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatDialogModule, MatListModule, MatProgressBarModule } from '@angular/material';
+import { MatButtonModule, MatListModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -19,11 +19,9 @@ import { UserService } from './user.service';
   imports: [
     CommonModule, 
     MatButtonModule, 
-    MatDialogModule, 
     MatListModule,
     FlexLayoutModule, 
     HttpClientModule, 
-    MatProgressBarModule,
     UserRoutingModule,
     ReactiveFormsModule,
     FormsModule

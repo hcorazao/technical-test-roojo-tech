@@ -1,3 +1,9 @@
-<p>
-  my-reservations works!
-</p>
+<div class="container">
+  <div  class="form-container" 
+        [formGroup]="reservationsForm" 
+        (ngSubmit)="searchFlights($event)" 
+        novalidate>
+    <input type="text" formControlName="userDocument">
+    <button mat-raised-button (click)="searchFlights($event)">Comprar</button>
+  </div>
+</div>
