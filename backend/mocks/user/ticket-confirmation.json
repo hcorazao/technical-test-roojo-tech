@@ -1,0 +1,19 @@
+{
+  "id": "ry8wgh3789vh5nhtv3",
+  "userDocumentId": "11791778947",
+  "reservationDate": "Mon Sep 16 2019 07:55:28 GMT-0500 (hora estándar de Perú) {}",
+  "numberFlight": "742",
+    "company": "American Airlines",
+    "origin": {
+      "id": "3g5y78y6y35563565",
+      "city": "Lima",
+      "country": "Peru",
+      "date": "Mon Sep 16 2019 07:55:28 GMT-0500 (hora estándar de Perú) {}"
+    },
+    "destination": {
+      "id": "3g5y78y6y35563565",
+      "city": "Medellin",
+      "country": "Colombia",
+      "date": "Mon Sep 16 2019 07:55:28 GMT-0500 (hora estándar de Perú) {}"
+    }
+}

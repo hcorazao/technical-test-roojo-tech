@@ -21,19 +21,19 @@ const apiEndpointBase = '/api/';
 // Routes
 app.locals = {
   routes: {
-    getFlights: `${apiEndpointBase}admin/get-flights`,
-    getTickets: `${apiEndpointBase}admin/get-tickets`,
-    bookTicket: `${apiEndpointBase}admin/book-ticket`
+    getFlights: `${apiEndpointBase}user/get-flights`,
+    getTickets: `${apiEndpointBase}user/get-tickets`,
+    bookTicket: `${apiEndpointBase}user/book-ticket`
   }
 };
 
 // Controllers
-const adminController = require('./controllers/admin.controller')(path);
+const userController = require('./controllers/user.controller')(path);
 
 // Endpoints
-app.get(app.locals.routes.getFlights, adminController.getFlights);
-app.post(app.locals.routes.getTickets, adminController.getTickets);
-app.post(app.locals.routes.bookTicket, adminController.bookTicket);
+app.get(app.locals.routes.getFlights, userController.getFlights);
+app.post(app.locals.routes.getTickets, userController.getTickets);
+app.post(app.locals.routes.bookTicket, userController.bookTicket);
 
 
 app.listen(9009, () => {
