@@ -2,11 +2,16 @@
   <h1>Todos los vuelos</h1>
   <div class="flight" *ngFor="let flight of flights">
     <div class="section">
-      <span>Precio: </span>{{flight.price}}$
+      <span class="title">Precio: </span>{{flight.price}}$
     </div>
     <div class="section">
-      <span>Origen: </span>{{flight.origin.city}}/{{flight.origin.country}}
-      <span>Fecha de salida: </span>{{flight.origin.date}}
+      <span class="title">Origen: </span>{{flight.origin.city}}/{{flight.origin.country}}
+      <span class="title">Fecha: </span>{{flight.origin.date}}
     </div>
+    <div class="section">
+      <span class="title">Llegada: </span>{{flight.destination.city}}/{{flight.destination.country}}
+      <span class="title">Fecha: </span>{{flight.destination.date}}
+    </div>
+    <button mat-raised-button (click)="selectFlight(flight)">Comprar</button>
   </div>
 </div>

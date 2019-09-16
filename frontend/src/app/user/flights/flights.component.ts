@@ -29,4 +29,8 @@ export class FlightsComponent implements OnInit {
     }));
   }
 
+  selectFlight(flight: Flight) {
+    console.log("flight", flight);
+  }
+
 }
