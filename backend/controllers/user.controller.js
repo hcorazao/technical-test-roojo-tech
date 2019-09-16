@@ -21,5 +21,12 @@ module.exports = (path) => {
     }, 1000)
   }
 
+  this.findFlight = (req, res) => {
+    let flightId = req.body.flightId;
+    setTimeout(() => {
+      return res.sendFile(path.resolve('mocks/user/find-flight.json'));           // Ubigeo Validation
+    }, 1000)
+  }
+
   return this;
 }

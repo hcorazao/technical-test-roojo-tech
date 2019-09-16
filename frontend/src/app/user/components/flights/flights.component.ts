@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
-import { Flight } from '../models/flight';
+import { Router } from '@angular/router';
+import { UserService } from '../../user.service';
+import { Flight } from '../../models/flight';
 
 @Component({
   selector: 'app-flights',
@@ -11,7 +12,8 @@ export class FlightsComponent implements OnInit {
   flights: Flight[];
 
   constructor(
-    public userService: UserService
+    public userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -20,7 +22,6 @@ export class FlightsComponent implements OnInit {
 
   loadFlights() {
     this.userService.getFlights().subscribe((response) => {
-      console.log("response", response);
       if (!!response) {
         this.flights = response.flights;
       }
@@ -31,6 +32,10 @@ export class FlightsComponent implements OnInit {
 
   selectFlight(flight: Flight) {
     console.log("flight", flight);
+    const params = {
+      flightId: flight.id
+    };
+    this.router.navigate(['/user/flight-detail', params]);
   }
 
 }

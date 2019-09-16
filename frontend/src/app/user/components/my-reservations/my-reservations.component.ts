@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { UserService } from '../user.service';
-import { Reservation } from '../models/reservation';
+import { UserService } from '../../user.service';
+import { Reservation } from '../../models/reservation';
 
 @Component({
   selector: 'app-my-reservations',
@@ -19,14 +19,6 @@ export class MyReservationsComponent implements OnInit {
 
   ngOnInit() {
   	this.buildForm();
-  }
-
-  loadFlights() {
-    this.userService.getTickets().subscribe((response) => {
-      console.log("response", response);
-    }, (error=>{
-      console.log("error", error);
-    }));
   }
 
   buildForm() {

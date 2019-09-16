@@ -6,9 +6,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 
 import { UserRoutingModule } from './user-routing.module';
-import { MyReservationsComponent } from './my-reservations/my-reservations.component';
-import { FlightsComponent } from './flights/flights.component';
-import { FlightDetailComponent } from './flight-detail/flight-detail.component';
+import { MyReservationsComponent } from './components/my-reservations/my-reservations.component';
+import { FlightsComponent } from './components/flights/flights.component';
+import { FlightDetailComponent } from './components/flight-detail/flight-detail.component';
 
 import { UserService } from './user.service';
 @NgModule({

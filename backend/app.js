@@ -22,6 +22,7 @@ const apiEndpointBase = '/api/';
 app.locals = {
   routes: {
     getFlights: `${apiEndpointBase}user/get-flights`,
+    findFlight: `${apiEndpointBase}user/find-flight`,
     getTickets: `${apiEndpointBase}user/get-tickets`,
     bookTicket: `${apiEndpointBase}user/book-ticket`
   }
@@ -32,6 +33,7 @@ const userController = require('./controllers/user.controller')(path);
 
 // Endpoints
 app.get(app.locals.routes.getFlights, userController.getFlights);
+app.post(app.locals.routes.findFlight, userController.findFlight);
 app.post(app.locals.routes.getTickets, userController.getTickets);
 app.post(app.locals.routes.bookTicket, userController.bookTicket);
 

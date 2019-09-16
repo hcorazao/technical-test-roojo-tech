@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Components
-import { MyReservationsComponent } from './my-reservations/my-reservations.component';
-import { FlightsComponent } from './flights/flights.component';
-import { FlightDetailComponent } from './flight-detail/flight-detail.component';
+import { MyReservationsComponent } from './components/my-reservations/my-reservations.component';
+import { FlightsComponent } from './components/flights/flights.component';
+import { FlightDetailComponent } from './components/flight-detail/flight-detail.component';
 
 const routes: Routes = [
   {

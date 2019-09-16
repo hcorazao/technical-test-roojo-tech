@@ -27,6 +27,14 @@ export class UserService {
     return this.http.post<any>(`${this.baseUrl}user/get-tickets`, userDocumentId);
   }
 
+  findFlight(flightId: string) {
+    const request = {
+      flightId: flightId
+    }
+    return this.http.post<any>(`${this.baseUrl}user/find-flight`, request);
+  }
+
+
   bookTicket(user: any, flightId: string) {
     const request = {
       user: user,
