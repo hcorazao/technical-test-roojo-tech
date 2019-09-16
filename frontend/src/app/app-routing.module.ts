@@ -4,11 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'gedcom-converter',
-    loadChildren: './gedcom-converter/gedcom-converter.module#GedcomConverterModule',
+    path: 'user',
+    loadChildren: './user/user.module#UserModule',
   },
-  { path: '', redirectTo: 'gedcom-converter', pathMatch: 'full' },
-  { path: '**', redirectTo: 'gedcom-converter' },
+  { path: '', redirectTo: 'user', pathMatch: 'full' },
+  { path: '**', redirectTo: 'user' },
 ];
 
 @NgModule({

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewTreeComponent } from './view-tree.component';
+import { FlightDetailComponent } from './flight-detail.component';
 
-describe('ViewTreeComponent', () => {
-  let component: ViewTreeComponent;
-  let fixture: ComponentFixture<ViewTreeComponent>;
+describe('FlightDetailComponent', () => {
+  let component: FlightDetailComponent;
+  let fixture: ComponentFixture<FlightDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewTreeComponent ]
+      declarations: [ FlightDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewTreeComponent);
+    fixture = TestBed.createComponent(FlightDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
