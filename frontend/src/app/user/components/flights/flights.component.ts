@@ -10,6 +10,8 @@ import { Flight } from '../../models/flight';
 })
 export class FlightsComponent implements OnInit {
   flights: Flight[];
+  morningMultiplicator: number = 1.2; // temporary for the demo
+  weekendMultiplicator: number = 1.3; // temporary for the demo
 
   constructor(
     public userService: UserService,
@@ -23,7 +25,21 @@ export class FlightsComponent implements OnInit {
   loadFlights() {
     this.userService.getFlights().subscribe((response) => {
       if (!!response) {
+        const timeDay = this.getTimeDay();
+        const isWeekend = this.findIfIsWeekend();
         this.flights = response.flights;
+        if (timeDay === 'morning') {
+          this.flights.map((flight)=>{
+            flight.price = flight.price*this.morningMultiplicator;
+            return flight;
+          });
+        }
+        if (!!isWeekend) {
+          this.flights.map((flight)=>{
+            flight.price = flight.price*this.weekendMultiplicator;
+            return flight;
+          });
+        }
       }
     }, (error=>{
       console.log("error", error);
@@ -36,6 +52,30 @@ export class FlightsComponent implements OnInit {
       flightId: flight.id
     };
     this.router.navigate(['/user/flight-detail', params]);
+  }
+
+  getTimeDay() {
+    const hour = new Date().getHours();
+    let timeDay: string;
+    if (hour < 12) {
+      timeDay = 'morning';
+    } else if (hour < 18) {
+      timeDay = 'afternoon';
+    } else {
+      timeDay = 'evening';
+    }
+    return timeDay;
+  }
+
+  findIfIsWeekend() {
+    const dayIndex = new Date().getDay();
+    let isWeekend: boolean;
+    if (dayIndex === 6 || dayIndex === 7) {
+      isWeekend = true;
+    } else {
+      isWeekend = false;
+    }
+    return isWeekend;
   }
 
 }
